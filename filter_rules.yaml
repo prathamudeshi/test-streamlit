@@ -1,0 +1,353 @@
+# Comprehensive AI Safety Filter Rules for Production
+# This configuration provides balanced protection while allowing legitimate discussions
+
+# Context-aware filtering configuration
+context_threshold: 0.85 # High threshold for semantic similarity
+intent_threshold: 0.70 # Threshold for detecting harmful intent
+risk_scoring:
+  low: 0.3
+  medium: 0.6
+  high: 0.8
+
+# Categories of concern with context-aware patterns
+safety_categories:
+  violence:
+    # Block instructions, not discussions
+    blocked_patterns:
+      - "how to kill"
+      - "how to harm"
+      - "how to hurt"
+      - "how to attack"
+      - "instructions for violence"
+      - "step by step violence"
+      - "make a weapon"
+      - "create weapon"
+      - "build weapon"
+      - "how to fight"
+      - "how to assault"
+      - "step by step guide to violence"
+      - "guide to violence"
+    discussion_patterns:
+      - "is violence"
+      - "what is violence"
+      - "discuss violence"
+      - "violence in"
+      - "about violence"
+      - "effects of violence"
+      - "violence prevention"
+      - "how to defend yourself"
+      - "defend yourself"
+      - "how to protect yourself"
+      - "protect yourself"
+      - "best way to protect yourself"
+      - "self-defense"
+      - "personal safety"
+      - "ways to stay safe"
+
+  weapons_explosives:
+    # Block instructions for dangerous materials and weapons
+    blocked_patterns:
+      - "how to make a bomb"
+      - "how to make bomb"
+      - "how to create bomb"
+      - "how to build bomb"
+      - "how to make explosives"
+      - "how to create explosives"
+      - "how to make dynamite"
+      - "how to make tnt"
+      - "how to make gunpowder"
+      - "how to make a gun"
+      - "how to make gun"
+      - "how to create weapon"
+      - "how to build weapon"
+      - "how to make weapon"
+      - "how to create bomb"
+      - "how to build bomb"
+      - "bomb making"
+      - "explosive making"
+      - "weapon making"
+      - "instructions for bomb"
+      - "instructions for explosives"
+      - "instructions for weapons"
+      - "step by step bomb"
+      - "step by step explosive"
+      - "step by step weapon"
+      - "recipe for bomb"
+      - "recipe for explosive"
+      - "formula for bomb"
+      - "formula for explosive"
+    discussion_patterns:
+      - "what is a bomb"
+      - "what is bomb"
+      - "what are explosives"
+      - "what is dynamite"
+      - "bomb disposal"
+      - "explosive safety"
+      - "weapon safety"
+      - "bomb detection"
+      - "explosive detection"
+      - "weapon laws"
+      - "bomb threat"
+      - "explosive threat"
+
+  self_harm:
+    blocked_patterns:
+      - "how to commit suicide"
+      - "ways to kill myself"
+      - "how to kill myself"
+      - "instructions for self-harm"
+      - "methods of suicide"
+      - "how to end my life"
+      - "ways to end my life"
+      - "how to harm myself"
+      - "instructions for suicide"
+      - "step by step suicide"
+    discussion_patterns:
+      - "suicide prevention"
+      - "mental health"
+      - "depression help"
+      - "crisis hotline"
+      - "suicide awareness"
+      - "mental health support"
+      - "depression treatment"
+      - "suicide warning signs"
+      - "depression"
+
+  illegal_activities:
+    blocked_patterns:
+      - "how to hack"
+      - "how to steal"
+      - "how to cheat"
+      - "how to break the law"
+      - "how to commit crime"
+      - "how to break into"
+      - "how to rob"
+      - "how to burglarize"
+      - "how to vandalize"
+      - "instructions for illegal"
+      - "instructions for crime"
+      - "step by step crime"
+      - "how to get away with crime"
+      - "how to avoid detection"
+      - "methods of attack"
+      - "methods of cyber attack"
+      - "cyber attack methods"
+      - "how to perform cyber attack"
+      - "write a script to steal"
+      - "write a script to hack"
+      - "write a script to break into"
+      - "write code to steal"
+      - "write code to hack"
+      - "python script to steal"
+      - "python script to hack"
+      - "script to steal passwords"
+      - "code to steal passwords"
+      - "steal passwords"
+      - "hack passwords"
+      - "obtain passwords illegally"
+    discussion_patterns:
+      - "what is illegal"
+      - "legal vs illegal"
+      - "law enforcement"
+      - "justice system"
+      - "crime prevention"
+      - "legal consequences"
+      - "criminal law"
+      - "crime statistics"
+
+  hate_speech:
+    blocked_patterns:
+      - "hate speech against"
+      - "discriminate against"
+      - "racial slurs"
+      - "promote hatred"
+      - "how to discriminate"
+      - "how to spread hate"
+      - "instructions for hate speech"
+      - "how to bully"
+      - "how to harass"
+    discussion_patterns:
+      - "what is hate speech"
+      - "combat discrimination"
+      - "inclusion"
+      - "diversity"
+      - "anti-discrimination"
+      - "hate speech laws"
+      - "bullying prevention"
+      - "harassment prevention"
+
+  misinformation:
+    blocked_patterns:
+      - "fake news"
+      - "conspiracy theory"
+      - "false information"
+      - "misleading claims"
+      - "how to spread misinformation"
+      - "how to create fake news"
+      - "how to manipulate information"
+    discussion_patterns:
+      - "fact checking"
+      - "verify information"
+      - "reliable sources"
+      - "critical thinking"
+      - "media literacy"
+      - "information verification"
+      - "fake news detection"
+
+  privacy_violations:
+    blocked_patterns:
+      - "how to stalk"
+      - "how to spy"
+      - "how to invade privacy"
+      - "how to hack into"
+      - "how to access unauthorized"
+      - "how to track someone"
+      - "how to monitor someone"
+      - "instructions for stalking"
+      - "instructions for spying"
+    discussion_patterns:
+      - "privacy protection"
+      - "data security"
+      - "personal information"
+      - "digital rights"
+      - "privacy laws"
+      - "cybersecurity"
+      - "data protection"
+      - "privacy settings"
+
+  financial_fraud:
+    blocked_patterns:
+      - "how to scam"
+      - "how to defraud"
+      - "how to steal money"
+      - "how to commit fraud"
+      - "how to launder money"
+      - "how to forge"
+      - "how to counterfeit"
+      - "instructions for fraud"
+      - "instructions for scam"
+      - "step by step fraud"
+    discussion_patterns:
+      - "financial literacy"
+      - "fraud prevention"
+      - "consumer protection"
+      - "investment advice"
+      - "financial security"
+      - "fraud detection"
+      - "scam awareness"
+      - "financial education"
+      - "protect against fraud"
+
+  dangerous_substances:
+    blocked_patterns:
+      - "how to make drugs"
+      - "how to create drugs"
+      - "how to synthesize drugs"
+      - "how to make poison"
+      - "how to create poison"
+      - "how to make chemicals"
+      - "drug synthesis"
+      - "dangerous chemicals"
+      - "poison recipes"
+      - "instructions for drugs"
+      - "instructions for poison"
+      - "step by step drugs"
+      - "step by step poison"
+      - "chemical formula"
+      - "drug formula"
+    discussion_patterns:
+      - "drug education"
+      - "substance abuse"
+      - "recovery"
+      - "harm reduction"
+      - "drug laws"
+      - "chemical safety"
+      - "poison control"
+      - "substance abuse treatment"
+
+# Semantic concepts for intent detection
+harmful_intents:
+  - "I want to harm someone"
+  - "How can I break the law"
+  - "Instructions for dangerous activities"
+  - "Ways to commit crimes"
+  - "Methods of causing harm"
+  - "How to exploit others"
+  - "Creating dangerous materials"
+  - "Bypassing security measures"
+  - "Manipulating people"
+  - "Spreading false information"
+  - "How to make explosives"
+  - "How to create weapons"
+  - "How to make bombs"
+  - "Instructions for violence"
+  - "How to commit suicide"
+  - "How to steal"
+  - "How to hack"
+  - "How to scam"
+
+# Educational and legitimate discussion topics
+legitimate_topics:
+  - "What is the definition of"
+  - "How does the legal system work"
+  - "What are the consequences of"
+  - "How to prevent"
+  - "What are the signs of"
+  - "How to help someone with"
+  - "What are the laws about"
+  - "How to protect against"
+  - "What are the risks of"
+  - "How to report"
+  - "What is the purpose of"
+  - "How to identify"
+  - "What are the effects of"
+  - "How to recognize"
+  - "What are the symptoms of"
+  - "What is the best way to protect yourself?"
+  - "How to defend yourself"
+  - "How to protect against fraud?"
+  - "What are the consequences of illegal activities?"
+  - "How to protect yourself from crime"
+  - "How to stay safe"
+  - "How to avoid danger"
+  - "How to stay protected"
+  - "What is the definition of violence?"
+  - "how to defend yourself"
+  - "defend yourself"
+  - "how to protect yourself"
+  - "protect yourself"
+  - "best way to protect yourself"
+  - "self-defense"
+  - "personal safety"
+  - "ways to stay safe"
+
+# Output filtering for AI responses
+restricted_outputs:
+  - "Here's how to harm"
+  - "Step by step instructions for"
+  - "I'll help you commit"
+  - "The best way to break the law is"
+  - "You should harm"
+  - "Go ahead and commit"
+  - "I can help you with illegal"
+  - "Here's how to get away with"
+  - "Here's how to make a bomb"
+  - "Here's how to create explosives"
+  - "Here's how to make weapons"
+  - "Here's how to commit suicide"
+  - "Here's how to hack"
+  - "Here's how to steal"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  violations_file: "safety_log.txt"
+  analytics_file: "safety_analytics.json"
+  include_timestamps: true
+  include_user_context: true
+
+# Performance settings
+performance:
+  max_text_length: 10000
+  batch_size: 10
+  timeout_seconds: 30

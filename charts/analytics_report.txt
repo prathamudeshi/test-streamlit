@@ -1,0 +1,39 @@
+============================================================
+ANALYTICS REPORT
+============================================================
+Generated: 2025-07-11 10:05:51
+
+OVERALL STATISTICS
+------------------------------
+Total Queries: 496
+Blocked Queries: 220
+Block Rate: 44.35%
+
+CURRENT TEST PERFORMANCE
+------------------------------
+True Positives: 16
+True Negatives: 13
+False Positives: 0
+False Negatives: 2
+Success Rate: 93.55%
+
+CATEGORY ANALYSIS
+------------------------------
+weapons_explosives: 47 queries
+intent: 37 queries
+illegal_activities: 36 queries
+instruction: 22 queries
+financial_fraud: 19 queries
+violence: 13 queries
+dangerous_substances: 13 queries
+privacy_violations: 13 queries
+hate_speech: 9 queries
+self_harm: 6 queries
+misinformation: 3 queries
+test: 2 queries
+
+RISK LEVEL ANALYSIS
+------------------------------
+Low: 258 queries (52.0%)
+Medium: 18 queries (3.6%)
+High: 220 queries (44.4%)

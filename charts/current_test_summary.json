@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-07-11T10:05:44.532548",
+  "metrics": {
+    "True Positives": 16,
+    "True Negatives": 13,
+    "False Positives": 0,
+    "False Negatives": 2
+  },
+  "precision": 1.0,
+  "recall": 0.8888888888888888,
+  "f1_score": 0.9411764705882353,
+  "total_tests": 31,
+  "success_rate": 93.54838709677419
+}
